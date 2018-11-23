@@ -44,3 +44,15 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+var Player = function() {
+    this.sprite = 'images/char-boy.png';
+};
+
+Player.prototype.update = function(dt) {
+};
+
+Player.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
