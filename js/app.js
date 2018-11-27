@@ -16,9 +16,10 @@ class Enemy {
 // a handleInput() method.
 
 class Player {
-    constructor(sprite = 'images/char-boy.png', ctx = window.ctx) {
+    constructor(x, y, sprite = 'images/char-boy.png') {
         this.sprite = sprite;
-        this.ctx = ctx;
+        this.x = x;
+        this.y = y;
     }
     
     update(dt) {
@@ -35,10 +36,12 @@ class Player {
 
 // Now instantiate your objects.
 const Feind = new Enemy();
+
 //const Spieler = new Player;
 // Place all enemy objects in an array called allEnemies
 var allEnemies = [];
 allEnemies.push(Feind);
+
 
 // Place the player object in a variable called player
 const player = new Player();
