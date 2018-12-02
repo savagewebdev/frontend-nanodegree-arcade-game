@@ -18,10 +18,10 @@ class Enemy {
 // a handleInput() method.
 
 class Player {
-    constructor(x, y, sprite = 'images/char-boy.png') {
-        this.sprite = sprite;
+    constructor(x, y) {
         this.x = x; // Horizontal
         this.y = y; // Vertical
+        this.sprite = 'images/char-boy.png'
     }
     
     update(dt) {
@@ -48,7 +48,7 @@ for (let num = 1; num <= 3; num++){
 //const Spieler = new Player;
 
 // Place the player object in a variable called player
-const player = new Player();
+const player = new Player(203, 425);
 Feind.render();
 
 // This listens for key presses and sends the keys to your
