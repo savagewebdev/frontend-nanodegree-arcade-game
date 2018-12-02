@@ -1,7 +1,9 @@
 // Enemies our player must avoid
 class Enemy {
-    constructor(sprite = 'images/enemy-bug.png', enemies = 3) {
-        this.sprite = sprite;
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.sprite = 'images/enemy-bug.png';
     }
     
     update(dt) {
@@ -18,8 +20,8 @@ class Enemy {
 class Player {
     constructor(x, y, sprite = 'images/char-boy.png') {
         this.sprite = sprite;
-        this.x = x;
-        this.y = y;
+        this.x = x; // Horizontal
+        this.y = y; // Vertical
     }
     
     update(dt) {
@@ -34,18 +36,20 @@ class Player {
     
 }
 
-// Now instantiate your objects.
-const Feind = new Enemy();
+var allEnemies = [];
+let rowPos = 60; // Vertical
+
+for (let num = 1; num <= 3; num++){
+    let Feind = new Enemy(5, rowPos)
+    allEnemies.push(Feind);
+    rowPos += 85;
+}
 
 //const Spieler = new Player;
-// Place all enemy objects in an array called allEnemies
-var allEnemies = [];
-allEnemies.push(Feind);
-
 
 // Place the player object in a variable called player
 const player = new Player();
-Feind.render(20, 30);
+Feind.render();
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
