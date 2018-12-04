@@ -38,19 +38,19 @@ class Player {
     handleInput(allowedKeys) {
         let z = allowedKeys;
         
-        if (z === 'left') { // Left
+        if (z === 'right') { // Right
             this.x += 85;
         }
         
-        if (z === 'up') { // Up
+        if (z === 'down') { // Down
             this.y += 85;
         }
         
-        if (z === 'right') { // Right
+        if (z === 'left') { // Left
             this.x -= 85;
         }
         
-        if (z === 'down') { // Down
+        if (z === 'up') { // Up
             this.y -= 85;
         }
     }
