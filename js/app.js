@@ -39,19 +39,19 @@ class Player {
         let z = allowedKeys;
         
         if (z === 'left') { // Left
-            this.x + 85;
+            this.x += 85;
         }
         
         if (z === 'up') { // Up
-            this.y + 85;
+            this.y += 85;
         }
         
         if (z === 'right') { // Right
-            this.x - 85;
+            this.x -= 85;
         }
         
         if (z === 'right') { // Down
-            this.y - 85;
+            this.y -= 85;
         }
     }
 }
