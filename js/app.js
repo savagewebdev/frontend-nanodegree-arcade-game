@@ -50,7 +50,7 @@ class Player {
             this.x -= 85;
         }
         
-        if (z === 'right') { // Down
+        if (z === 'down') { // Down
             this.y -= 85;
         }
     }
