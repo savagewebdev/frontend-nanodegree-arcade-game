@@ -32,8 +32,6 @@ var Engine = (function(global) { // The Engine function/object is created using 
     }
 
     function init() { // The initialize function calls the reset() function and the main() function as a way to create a new iteration of the game; as such, it redefines lastTime to create a new time.
-    
-    // Collision detection may need to be included in this function at some point.
         reset();
         lastTime = Date.now();
         main();
@@ -43,7 +41,7 @@ var Engine = (function(global) { // The Engine function/object is created using 
     function update(dt) { // The update(dt) function draws upon the dt variable ((now - lastTime) / 1000.0). It is called by the main() function above.
     
         updateEntities(dt); // Calls the updateEntities(dt) function below.
-        // checkCollisions(); A commented-out function. To-be created.
+        checkCollisions(); //A commented-out function. To-be created.
     }
 
 
@@ -116,7 +114,7 @@ var Engine = (function(global) { // The Engine function/object is created using 
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
-        // noop
+        console.log("You've been hit!")
     }
 
     /* Go ahead and load all of the images we know we're going to need to

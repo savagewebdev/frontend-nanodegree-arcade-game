@@ -1,14 +1,12 @@
 // Enemies our player must avoid
 class Enemy {
-    constructor(x, y, speed, spriteWidth, spriteHeight) {
+    constructor(x, y, speed, width, height) {
         this.x = x;
         this.y = y;
         this.sprite = 'images/enemy-bug.png';
         this.speed = speed;
-        this.spriteWidth = spriteWidth;
-        this.spriteHeight = spriteHeight;
-        this.bound = spriteWidth * spriteHeight;
-        
+        this.width = width;
+        this.height = height;
     }
     
     update(dt) {
@@ -19,20 +17,15 @@ class Enemy {
     render() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
-    
 }
-// Now write your own player class
-// This class requires an update(), render() and
-// a handleInput() method.
 
 class Player {
-    constructor(x, y, spriteWidth, spriteHeight) {
+    constructor(x, y, width, height) {
         this.x = x; // Horizontal
         this.y = y; // Vertical
         this.sprite = 'images/char-boy.png'
-        this.spriteWidth = spriteWidth;
-        this.spriteHeight = spriteHeight;
-        this.bound = spriteWidth * spriteHeight
+        this.width = width;
+        this.height = height;
     }
     
     update(dt) {
@@ -63,27 +56,24 @@ class Player {
     }
 }
 
+// Enemy Generator
 
-var allEnemies = [];
+const allEnemies = [];
 let rowPos = 60; // Vertical
 let speed = 300; // Starting speed test
-
 for (let num = 1; num <= 3; num++){
-    let Feind = new Enemy(5, rowPos, speed, 98, 66) // 98 x-horizontal 66 y-vertical
-    allEnemies.push(Feind);
+    let enemy = new Enemy(5, rowPos, speed, 98, 66) // 98 x-horizontal 66 y-vertical
     rowPos += 83;
     speed -= 50;
+    allEnemies.push(enemy);
 }
 
-//const Spieler = new Player;
+// Player Generator
 
-// Place the player object in a variable called player
 const player = new Player(205, 405, 68, 75); //68 x-horizontal 75-vertical
 
+// Key listener
 
-
-// This listens for key presses and sends the keys to your
-// Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
     let allowedKeys = {
         37: 'left',
@@ -95,4 +85,14 @@ document.addEventListener('keyup', function(e) {
     player.handleInput(allowedKeys[e.keyCode]);
 });
 
-
+function checkCollisions() {
+    for (const enemy of allEnemies) {
+        
+        if (player.x < enemy.x + enemy.width &&
+            player.x + enemy.width > enemy.x &&
+            player.y < enemy.y + enemy.height &&
+            player.y + player.height > enemy.y) {
+                console.log("It works!")
+            }
+    }
+}
