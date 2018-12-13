@@ -62,7 +62,7 @@ const allEnemies = [];
 let rowPos = 60; // Vertical
 let speed = 300; // Starting speed test
 for (let num = 1; num <= 3; num++){
-    let enemy = new Enemy(5, rowPos, speed, 98, 66) // 98 x-horizontal 66 y-vertical
+    let enemy = new Enemy(5, rowPos, speed, 90, 60) // 98 x-horizontal 66 y-vertical
     rowPos += 83;
     speed -= 50;
     allEnemies.push(enemy);
@@ -70,7 +70,7 @@ for (let num = 1; num <= 3; num++){
 
 // Player Generator
 
-const player = new Player(205, 405, 68, 75); //68 x-horizontal 75-vertical
+const player = new Player(205, 405, 60, 70); //68 x-horizontal 75-vertical
 
 // Key listener
 

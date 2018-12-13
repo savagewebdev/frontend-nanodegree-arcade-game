@@ -114,7 +114,7 @@ var Engine = (function(global) { // The Engine function/object is created using 
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
-        console.log("You've been hit!")
+        //to be done
     }
 
     /* Go ahead and load all of the images we know we're going to need to
