@@ -35,22 +35,22 @@ class Player {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
     
-    handleInput(allowedKeys) {
+    handleInput(allowedKeys) { // x = 505, y = 606
         let z = allowedKeys;
         
-        if (z === 'right') { // Right
+        if (this.x < 407 && z === 'right') { // 
             this.x += 101;
         }
         
-        if (z === 'down') { // Down
+        if (this.y < 405 && z === 'down') { // 
             this.y += 83;
         }
         
-        if (z === 'left') { // Left
+        if (this.x > 3 && z === 'left') { // 
             this.x -= 101;
         }
         
-        if (z === 'up') { // Up
+        if (this.y > -10 && z === 'up') { // 
             this.y -= 83;
         }
     }
@@ -85,14 +85,3 @@ document.addEventListener('keyup', function(e) {
     player.handleInput(allowedKeys[e.keyCode]);
 });
 
-function checkCollisions() {
-    for (const enemy of allEnemies) {
-        
-        if (player.x < enemy.x + enemy.width &&
-            player.x + enemy.width > enemy.x &&
-            player.y < enemy.y + enemy.height &&
-            player.y + player.height > enemy.y) {
-                console.log("It works!")
-            }
-    }
-}

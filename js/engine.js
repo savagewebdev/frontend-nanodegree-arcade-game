@@ -1,5 +1,5 @@
 
-var Engine = (function(global) { // The Engine function/object is created using global as its parameter, which is in turn an object.
+var Engine = (function(global) { // The Engine function is created using global as its parameter, which is in turn an object.
 
     var doc = global.document, // The doc variable is the document method of global.
         win = global.window, // The win variable is the window method of global. 
@@ -114,7 +114,23 @@ var Engine = (function(global) { // The Engine function/object is created using 
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
-        //to be done
+        for (const enemy of allEnemies) {
+            enemy.x = 0;
+        }
+        player.x = 205;
+        player.y = 405;
+    }
+
+    function checkCollisions() {
+        for (const enemy of allEnemies) {
+            
+            if (player.x < enemy.x + enemy.width &&
+                player.x + enemy.width > enemy.x &&
+                player.y < enemy.y + enemy.height &&
+                player.y + player.height > enemy.y) {
+                    reset();
+                }
+        }
     }
 
     /* Go ahead and load all of the images we know we're going to need to
