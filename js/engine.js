@@ -41,7 +41,7 @@ var Engine = (function(global) { // The Engine function is created using global 
     function update(dt) { // The update(dt) function draws upon the dt variable ((now - lastTime) / 1000.0). It is called by the main() function above.
     
         updateEntities(dt); // Calls the updateEntities(dt) function below.
-        checkCollisions(); //A commented-out function. To-be created.
+        checkCollisions(); 
     }
 
 
@@ -113,13 +113,31 @@ var Engine = (function(global) { // The Engine function is created using global 
      * handle game reset states - maybe a new game menu or a game over screen
      * those sorts of things. It's only called once by the init() method.
      */
-    function reset() {
+    function reset() { // Perhaps yield?
+        player.x = 205;
+        player.y = 405;
+        
         for (const enemy of allEnemies) {
             enemy.x = 0;
         }
-        player.x = 205;
-        player.y = 405;
     }
+    
+//    function victory() {
+//        setTimeout(() => {
+//            if (player.y == -10) {
+//                setTimeout(() => {
+//                    let message = confirm("You've won! Play again?");
+//                    if (message == true) {
+//                        reset();
+//                    } else {
+//                        console.log("Quitter!");
+//                    }
+//                }, 1 * 1000);
+//            }
+//            else {
+//            }
+//        } , 1 * 2000);
+//    }
 
     function checkCollisions() {
         for (const enemy of allEnemies) {
@@ -127,7 +145,8 @@ var Engine = (function(global) { // The Engine function is created using global 
             if (player.x < enemy.x + enemy.width &&
                 player.x + enemy.width > enemy.x &&
                 player.y < enemy.y + enemy.height &&
-                player.y + player.height > enemy.y) {
+                player.y + player.height > enemy.y) 
+                {
                     reset();
                 }
         }
