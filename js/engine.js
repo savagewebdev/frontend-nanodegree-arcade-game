@@ -1,4 +1,3 @@
-
 var Engine = (function(global) { 
 
     var doc = global.document, 
