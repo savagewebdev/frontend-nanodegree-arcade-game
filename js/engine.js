@@ -97,7 +97,7 @@ var Engine = (function(global) {
                     reset()
                     canvas.width = 0;
                     canvas.height = 0;
-                    console.log("Quitter!");
+                    alert("Quitter!");
                 }
             1 * 2000});
         }
