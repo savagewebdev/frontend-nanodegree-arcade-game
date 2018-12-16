@@ -1,4 +1,3 @@
-// Enemies our player must avoid
 class Enemy {
     constructor(x, y, speed, width, height) {
         this.x = x;
@@ -11,7 +10,7 @@ class Enemy {
     
     update(dt) {
         this.x = this.x + this.speed * dt;
-        if(this.x > 505){this.x = 0;} // If the Enemy scrolls off-screen, then reset position.
+        if(this.x > 505){this.x = 0;} // 
     }
     
     render() {
@@ -35,7 +34,7 @@ class Player {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
     
-    handleInput(allowedKeys) { // x = 505, y = 606
+    handleInput(allowedKeys) { 
         let z = allowedKeys;
         
         if (this.x < 407 && z === 'right') { // 
@@ -56,23 +55,17 @@ class Player {
     }
 }
 
-// Enemy Generator
-
 const allEnemies = [];
-let rowPos = 60; // Vertical
-let speed = 300; // Starting speed test
+let rowPos = 60; 
+let speed = 300; 
 for (let num = 1; num <= 3; num++){
-    let enemy = new Enemy(5, rowPos, speed, 90, 60) // 98 x-horizontal 66 y-vertical
+    let enemy = new Enemy(5, rowPos, speed, 90, 60) 
     rowPos += 83;
     speed -= 50;
     allEnemies.push(enemy);
 }
 
-// Player Generator
-
-const player = new Player(205, 405, 60, 70); //68 x-horizontal 75-vertical
-
-// Key listener
+const player = new Player(205, 405, 60, 70); 
 
 document.addEventListener('keyup', function(e) {
     let allowedKeys = {
