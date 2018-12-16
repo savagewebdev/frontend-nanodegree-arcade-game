@@ -1,4 +1,4 @@
-# Classic Arcade Game Clone Project | Robin's Frogger-Bugger Game
+# Classic Arcade Game Clone Project | Robin's Bugger Game
 
 ## Table of Contents
 
@@ -10,7 +10,8 @@
 
 ## Dependencies
 
-[Axis-Aligned Bounding Box](https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection#Axis-Aligned_Bounding_Box) - Framework used for collision physics
+[Udacity Pre-Existing Code](https://github.com/udacity/frontend-nanodegree-arcade-game) - Much of the game's pre-existing engine has been provided by Udacity for use in the Arcade Game Clone Project.
+[Axis-Aligned Bounding Box](https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection#Axis-Aligned_Bounding_Box) - Framework used for the game's collision physics.
 
 ## Contributing
 
@@ -18,19 +19,23 @@ This repository is the starter code for _all_ Udacity students. Therefore, we mo
 
 ## Running the game
 
+The game runs automatically when file is opened in an internet browser. Simply open up the game's index file in your browser to begin playing the game.
+
 ## Playing the game
 
-Introduction: Robin's Matching Game is a timed & scored memory card game. The goal is to complete the game in the least amount of time with the least amount of total moves, thus challenging you--the player--to utilize his or her memory to complete it. The game begins with a score of 3 stars and the timer set at 0. Each attepted move counts toward the removal of the stars counted at the end of the game, and the game itself ends when all of the cards have been successfully matched.
+Introduction: Robin's Bugger Game is a simplified throwback to the original 1981 Frogger Arcade game originally developed by Konami. Newer graphics have been utilized to modernize & differentiate it from Konami's original arcade game.
 
-Beginning: The game loads automatically in the browser. The clock will begin counting upon loading the game and will continue until the conclusion of the game.
+Giant Mutant Bugs: The giant mutant bug characters are represented by AI bug sprites and are controlled by the computer/AI.
 
-Moves: Each move is comprised of a single attempted pairing of cards. In addition to impacting the ending score, each move is counted and incremented at the top of the game's GUI. To begin a move, simply click on a memory card of your choice to flip it over and click on a another card to see if it matches the first card. If the pair of cards flipped during the match, they will remain open. If the cards do not match, they will flip back over facing down. The amount of moves will be counted as the game progresses and will be displayed at the game's end. 
+Hero: The hero character is pictured by a human sprite and is controlled by you, the player.
 
-Goal: Each move counts against the game's final score. The game begins with a score of 3 and is displayed by the stars located on the top of the game's GUI. Once again, the goal of the game is to complete the game in the least amount of time with the least amount of total moves, thus challenging the player to utilize his or her memory to complete it.
+Goal: The goal of the game is to move our hero from the grassy knoll to the riverside safely, dodging the giant mutant bugs busily running down the road.
 
-Completion: Once all of the cards have been matched successfully, the total score is displayed along with the time it took to complete it. An option is also given to play again.
+Gameplay: Using your keyboard's arrow keys (right: →, left: ←, up: ↑, down: ↓), move the hero character carefully to the edge of the grassy knoll. Then, proceed to carefully move the hero across the road, timing your moves to coincide with the gaps between the giant mutant bugs. The game will end when the hero character reaches the riverside. Be careful, they move quickly!
 
-Reset/Playing Again: To start a game over, or to play again, simply press the "Reset" button located at the top right corner of the game's GUI.
+	When the hero character is hit by a giant mutant bug, the game will automatically start over and our hero will respawn back in the grassy knoll.
+
+Completion: The game comes to an end when our hero reaches the riverside successfully. When victory is achieved, a window will prompt the player with the option to play again.
 
 ## Authors
 
