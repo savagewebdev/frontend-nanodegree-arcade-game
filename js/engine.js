@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-var Engine = (function(global) { 
-=======
-
 var Engine = (function(global) { // The Engine function is created using global as its parameter, which is in turn an object.
->>>>>>> parent of c718477... Commentary deletion from engine.js
+
 
     var doc = global.document, // The doc variable is the document method of global.
         win = global.window, // The win variable is the window method of global. 
@@ -119,7 +115,7 @@ var Engine = (function(global) { // The Engine function is created using global 
      * handle game reset states - maybe a new game menu or a game over screen
      * those sorts of things. It's only called once by the init() method.
      */
-    function reset() { // Perhaps yield?
+    function reset() { // Resetting sprite/locations locations
         player.x = 205;
         player.y = 405;
         for (const enemy of allEnemies) {
@@ -128,7 +124,7 @@ var Engine = (function(global) { // The Engine function is created using global 
         clearTimeout(stop);
     }
     
-    function victory() {
+    function victory() { // Victory scenario window providing the option to play again.
         let stop;
         if (player.y === -10) {
             stop = setTimeout(function() {
@@ -146,8 +142,8 @@ var Engine = (function(global) { // The Engine function is created using global 
         return;
     }
     
-    function checkCollisions() {
-        for (const enemy of allEnemies) {
+    function checkCollisions() { // Check for collisions between the player and the enemy. Calls reset() when a collision occurs.
+        for (const enemy of allEnemies) { // Cycles through the allEnemies array
             if (player.x < enemy.x + enemy.width &&
                 player.x + enemy.width > enemy.x &&
                 player.y < enemy.y + enemy.height &&
