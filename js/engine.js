@@ -29,9 +29,11 @@ var Engine = (function(global) { // The Engine function is created using global 
          */
         
         win.requestAnimationFrame(main); // Tells the browser that we wish to perform an animation and requests that the browser perform a function to update the animation before the next repaint.
+        victory();
     }
 
     function init() { // The initialize function calls the reset() function and the main() function as a way to create a new iteration of the game; as such, it redefines lastTime to create a new time.
+        
         reset();
         lastTime = Date.now();
         main();
@@ -116,32 +118,32 @@ var Engine = (function(global) { // The Engine function is created using global 
     function reset() { // Perhaps yield?
         player.x = 205;
         player.y = 405;
-        
         for (const enemy of allEnemies) {
             enemy.x = 0;
         }
+        clearTimeout(stop);
     }
     
-//    function victory() {
-//        setTimeout(() => {
-//            if (player.y == -10) {
-//                setTimeout(() => {
-//                    let message = confirm("You've won! Play again?");
-//                    if (message == true) {
-//                        reset();
-//                    } else {
-//                        console.log("Quitter!");
-//                    }
-//                }, 1 * 1000);
-//            }
-//            else {
-//            }
-//        } , 1 * 2000);
-//    }
-
+    function victory() {
+        let stop;
+        if (player.y === -10) {
+            stop = setTimeout(function() {
+                let message = confirm("You've won! Play again?");
+                if (message == true) {
+                    reset();
+                } else {
+                    reset()
+                    canvas.width = 0;
+                    canvas.height = 0;
+                    console.log("Quitter!");
+                }
+            1 * 2000});
+        }
+        return;
+    }
+    
     function checkCollisions() {
         for (const enemy of allEnemies) {
-            
             if (player.x < enemy.x + enemy.width &&
                 player.x + enemy.width > enemy.x &&
                 player.y < enemy.y + enemy.height &&
