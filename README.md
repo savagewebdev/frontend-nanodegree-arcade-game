@@ -1,18 +1,17 @@
-# Classic Arcade Game Clone Project | Robin's Bugger Game
+# Robin's Project | Robin's Bugger Game
 
 ## Table of Contents
 
 * [Dependencies](#Dependencies)
 * [Contributing](#Contributing)
 * [Running](#Running)
-* [Playing](#Playing)
-* [Characters](#Characters)
 * [Authors](#Authors)
 
 ## Dependencies
 
 [Udacity Pre-Existing Code](https://github.com/udacity/frontend-nanodegree-arcade-game) - Much of the game's pre-existing engine has been provided by Udacity for use in the Arcade Game Clone Project.
-[Axis-Aligned Bounding Box](https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection#Axis-Aligned_Bounding_Box) - Framework used for the game's collision physics.
+[Jquery](https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection#Axis-Aligned_Bounding_Box) - Framework used for the game's collision physics.
+[Jasmine-Jquery]() - 
 
 ## Contributing
 
